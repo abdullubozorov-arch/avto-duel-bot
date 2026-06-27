@@ -139,7 +139,7 @@ def stop_worker(phone):
     if task and not task.done():
         task.cancel()
 
-app = Client("duel_bot", bot_token=BOT_TOKEN)
+app = Client("duel_bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
 @app.on_message(filters.command("start") & filters.private)
 async def start(client, message: Message):
